@@ -2,8 +2,6 @@ import Link from "next/link"
 import { deleteData } from "@/utils/apiUtils";
 export default function BookCard({ book }) {
 
-
-
   const {
     _id,
     name,
@@ -26,7 +24,6 @@ export default function BookCard({ book }) {
     }
 
   }
-
 
   return (
     <Link href={`/book-details/${_id}`} className="relative group text-right text-sm text-slate-400 hover:bg-slate-800 duration-500 p-4 border rounded-md">

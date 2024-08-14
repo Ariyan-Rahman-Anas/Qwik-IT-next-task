@@ -1,9 +1,11 @@
 "use client"
 
 import { postData } from "@/utils/apiUtils";
-import {  toast } from 'sonner'
+import { toast } from 'sonner'
+import { useRouter } from 'next/navigation'; 
 
 export default function BookForm() {
+    const router = useRouter();
     
     const handleAddBook = async (e) => {
         e.preventDefault()
@@ -24,6 +26,7 @@ export default function BookForm() {
             const data = await postData("books", aNewBook)
             if(data?.message){
                 toast.success(data?.message)
+                router.push("/all-books");
             }
         } catch (error) {
             toast.error(error?.message)
@@ -32,7 +35,7 @@ export default function BookForm() {
     }
 
   return (
-      <form onSubmit={handleAddBook}  className="space-y-4 w-full md:w-[80vw] lg:w-[60vw] mx-auto z-[50] ">
+      <form onSubmit={handleAddBook}  className="space-y-4 z-[50] ">
           <div className="flex flex-col md:flex-row gap-4">
               <div className="relative name w-full">
                   <input

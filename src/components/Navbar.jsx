@@ -8,7 +8,7 @@ import { useState } from 'react';
 export default function Navbar() {
     const navItems = [
         { name: 'Home', href: '/' },
-        { name: 'Books', href: '/add-book' },
+        { name: 'Add Book', href: '/add-book' },
     ];
 
     const pathname = usePathname(); 
@@ -19,8 +19,6 @@ export default function Navbar() {
     const hidingMenu = () => {
         setMenu(!menu);
     };
-    
-        // < X />
 
     return (
         <nav className="flex items-center justify-between py-4">
@@ -34,15 +32,14 @@ export default function Navbar() {
                             ? "left-0 top-[3.8rem] py-10 md:py-0 right-0 bg-black md:bg-transparent rounded-md w-full min-h-screen md:min-h-0 "
                             : "-left-[69rem]"
                         }  duration-700 z-[100] `}
-                    // className="flex items-center gap-4"
                 >
                     {navItems.map((item, index) => (
-                        <li onClick={hidingMenu} key={index} className="relative border border-red-500 group">
+                        <li onClick={hidingMenu} key={index} className="relative group">
                             <Link href={item.href}
                                     className={`${pathname === item.href
                                             ? 'border-b-2 border-gray rounded-sm text-primary'
                                             : 'border-b-2 border-b-transparent'
-                                        } duration-500 border border-green-500 `}
+                                        } duration-500  `}
                                 >
                                     {item.name}
                             </Link>

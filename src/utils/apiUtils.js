@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// const BASE_URL = "http://localhost:5001";
-const BASE_URL = "https://qwik-it-next-back-end.vercel.app";
+const BASE_URL = "http://localhost:5001";
+// const BASE_URL = "https://qwik-it-next-back-end.vercel.app";
 
 // Function to fetch data
 export const getData = async (endPoint) => {
@@ -35,7 +35,9 @@ export const postData = async (endPoint, data) => {
 export const deleteData = async (endPoint, id) => {
     try {
         const response = await axios.delete(`${BASE_URL}/${endPoint}/${id}`, { withCredentials: true });
-        return response?.data; // Return response data if needed
+        if (response?.data.deleting?._id) {
+        return "Book Deleted Successfully!" 
+        }
     } catch (error) {
         console.error("Error deleting data:", error);
         throw error;
