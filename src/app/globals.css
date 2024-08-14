@@ -2,32 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+.btn {
+    @apply border px-4 py-2 rounded-md border-gray hover:bg-gray hover:text-darkGray duration-500 ;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.btn-2{
+    @apply cursor-pointer block w-fit mx-auto bg-gray text-darkGray px-4 py-1.5 rounded-md border hover:bg-darkGray  hover:text-gray border-gray hover:shadow-md duration-500 
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.input-field {
+  @apply block w-full px-2 py-2  text-gray bg-transparent border border-gray rounded focus:outline-none focus:ring-0 ;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.input-label{
+    @apply absolute text-gray duration-300 transform -translate-y-2 scale-75 top-0 z-10 origin-[0] bg-darkGray px-2 peer-focus:px-2 peer-focus:text-gray peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-2
 }
+/* .err-msg{
+    @apply text-danger text-sm font-semibold text-left 
+} */
