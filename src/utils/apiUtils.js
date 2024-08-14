@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:5001";
+// const BASE_URL = "http://localhost:5001";
+const BASE_URL = "https://qwik-it-next-back-end.vercel.app";
 
 // Function to fetch data
 export const getData = async (endPoint) => {
