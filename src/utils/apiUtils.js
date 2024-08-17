@@ -35,7 +35,8 @@ export const postData = async (endPoint, data) => {
 export const deleteData = async (endPoint, id) => {
     try {
         const response = await axios.delete(`${BASE_URL}/${endPoint}/${id}`, { withCredentials: true });
-        if (response?.data.deleting?._id) {
+        console.log("res from utils", response?.data)
+        if (response?.data?.message) {
         return "Book Deleted Successfully!" 
         }
     } catch (error) {

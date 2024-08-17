@@ -47,6 +47,7 @@ export default function BookDetailsPage({ params }) {
     try {
       const data = await deleteData("books", bookId);
       toast.success(data)
+      console.log("Data", data)
       router.push("/all-books");
     } catch (error) {
       console.error("Failed to delete the book:", error);
